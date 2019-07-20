@@ -7,6 +7,7 @@
          border: 1px solid black;
          }
       </style>
+	 
    </head>
    <body>
       <table style="width:20%">
@@ -32,20 +33,32 @@
          </tr>
       </table>
       <h1>Stock Trading</h1>
-      <form action="submit" method="post">
+      <form name="myform" method="post">
       <table style="width:20%">
          <tr>
             <td>Ticker</td>
-            <td><input type="text" name="mnc"</td>
+            <td><input type="text" id="mnc" required></td>
          </tr>
          <tr>
             <td>Quantity</td>
-            <td><input type="text" name="quant"</td>
+            <td><input type="text" id="quant" required></td>
          </tr>
          <tr>
-            <td><input type="submit" value="Submit"</td>
+            <td><button type="button" onclick="myfunction()">Submit</button></td>
          </tr>
       </table>
-      </form>
+    </form>
+	 <script>
+	  function myfunction(){
+	    var quantity = document.getElementById("quant").value
+		if(isNaN(quantity)){
+		    window.alert("Quantity is not a number");
+			return;
+			}
+		if(quantity%10!=0 || quantity<10 || quantity>100)
+            window.alert("Quantity must be multiple of 10 or between 10 to 100");
+        else window.alert("success")			
+	   	 }
+	  </script>
    </body>
 </html>
