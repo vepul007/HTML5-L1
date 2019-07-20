@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Xena Events</title>
+      <script>
+         document.createElement("mystyle");
+        function validation(){
+               var name=document.getElementById("name").value;
+               var age=document.getElementById("age").value;
+               var x=document.getElementById("email").value;
+               var city=document.getElementById("city").value;
+               var alphaExp = /^[a-zA-Z]+$/;
+               var numericExpression = /^[0-9]+$/;
+			   var atposition=x.indexOf("@");  
+               var dotposition=x.lastIndexOf("."); 
+			   var flag=true;
+			   
+              
+               if(name=="" || age=="" || email=="" || city=="" ){
+                    window.alert("All Fields are Mandatory");
+					flag=false;
+                    return;
+                   }                
+               if(age<18 || !age.match(numericExpression)){
+                    window.alert("Age is either less than 18 years or not valid");
+					flag=false;
+                    return;
+                   }
+               if(!name.match(alphaExp)){
+                    window.alert("Name is not correct");
+					flag=false;
+                    return;
+                   }
+			    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+                    alert("Please enter a valid e-mail address");  
+					flag=false;
+                    return ;  
+                   }
+				if(flag==true)
+                    window.alert("success");				
+            }
+         
+      </script>
+      <style>
+         table, th, td {
+         border: 1px solid black;
+         }
+         mystyle{
+         display:block;
+         background-color:#b3d9ff;
+         padding: 50px;
+         fon-size:30px;
+         }
+      </style>
+   </head>
+   <body>
+      <p style="text-align:center;"><img src="img/logo.png" alt="Logo"></p>
+      <h1 align="center">Xena Events Pvt Ltd</h1>
+      <h3 align="center">Registrations open from 27th feb 2017 for next 5 days</h3>
+      <mystyle>
+         <table style="width:40%">
+            <form name="myform" method="get">
+               <tr align="center">
+                  <td><strong>Name:</strong><input id="name" type="text" required></td>
+               </tr>
+               <tr align="center">
+                  <td><strong>Age:</strong><input id="age" type="text" required></td>
+               </tr>
+               <tr align="center">
+                  <td><strong>Email:</strong><input id="email" type="text" required></td>
+               </tr>
+               <tr align="center">
+                  <td>
+                     <strong>City:</storng><input list="cities" id="city" required>
+                     <datalist id="cities">
+                        <option value="Bengaluru">
+                        <option value="Delhi">
+                        <option value="Kanpur">
+                        <option value="Rajkot">
+                        <option value="Vizag">
+                     </datalist>
+                  </td>
+               </tr>
+               <tr align="center">	
+               <td><button type="reset">Reset</button> <button type="button" onclick="validation()">Submit</button></td>
+               </tr>
+            </form>
+         </table>
+      </mystyle>
+   </body>
+</html>
