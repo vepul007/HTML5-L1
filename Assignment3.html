@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+<title>Assignment3</title>
+<link rel="stylesheet" href="style3.css">
+
+</head>
+<body>
+<div class="row">
+<div align="center" class="header">
+  <img src="logo2.png" alt="logo" />
+  <h2>Awesome Online videos</h2>
+</div>
+</div>
+
+<div class="row">
+  <br>
+  <h2 align="center">Video Of The Week</h2>
+  <video id="myVideo" class="center" width="480" height="380" src="movie.mp4" type="video/mp4"></video>
+  <div align="center">
+  <button  onclick="playVid()" type="button">Play Video</button>
+  <button  onclick="pauseVid()" type="button">Pause Video</button>
+  </div>	
+ </div>
+ <script>
+var vid = document.getElementById("myVideo"); 
+function playVid(){ 
+  vid.play(); 
+}
+function pauseVid(){ 
+  vid.pause(); 
+}
+</script>
+</body>
+</html>
