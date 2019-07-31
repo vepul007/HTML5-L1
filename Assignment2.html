@@ -1,46 +1,8 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
    <head>
       <title>Xena Events</title>
-      <script>
-         document.createElement("mystyle");
-        function validation(){
-               var name=document.getElementById("name").value;
-               var age=document.getElementById("age").value;
-               var x=document.getElementById("email").value;
-               var city=document.getElementById("city").value;
-               var alphaExp = /^[a-zA-Z]+$/;
-               var numericExpression = /^[0-9]+$/;
-			   var atposition=x.indexOf("@");  
-               var dotposition=x.lastIndexOf("."); 
-			   var flag=true;
-			   
-              
-               if(name=="" || age=="" || email=="" || city=="" ){
-                    window.alert("All Fields are Mandatory");
-					flag=false;
-                    return;
-                   }                
-               if(age<18 || !age.match(numericExpression)){
-                    window.alert("Age is either less than 18 years or not valid");
-					flag=false;
-                    return;
-                   }
-               if(!name.match(alphaExp)){
-                    window.alert("Name is not correct");
-					flag=false;
-                    return;
-                   }
-			    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
-                    alert("Please enter a valid e-mail address");  
-					flag=false;
-                    return ;  
-                   }
-				if(flag==true)
-                    window.alert("success");				
-            }
-         
-      </script>
       <style>
          table, th, td {
          border: 1px solid black;
@@ -59,15 +21,15 @@
       <h3 align="center">Registrations open from 27th feb 2017 for next 5 days</h3>
       <mystyle>
          <table style="width:40%">
-            <form name="myform" method="get">
+            <form name="myform">
                <tr align="center">
-                  <td><strong>Name:</strong><input id="name" type="text" required></td>
+                  <td><strong>Name:</strong><input pattern="[A-Za-z]+" type="text" required></td>
                </tr>
                <tr align="center">
-                  <td><strong>Age:</strong><input id="age" type="text" required></td>
+                  <td><strong>Age:</strong><input type="number" min="18" required></td>
                </tr>
                <tr align="center">
-                  <td><strong>Email:</strong><input id="email" type="text" required></td>
+                  <td><strong>Email:</strong><input type="email" required></td>
                </tr>
                <tr align="center">
                   <td>
@@ -82,7 +44,7 @@
                   </td>
                </tr>
                <tr align="center">	
-               <td><button type="reset">Reset</button> <button type="button" onclick="validation()">Submit</button></td>
+               <td><button type="reset">Reset</button> <button>Submit</button></td>
                </tr>
             </form>
          </table>
