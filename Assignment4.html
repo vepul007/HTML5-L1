@@ -10,6 +10,10 @@
       title:{
       text: "T20 Cricket Match Batting Statistics "
       },
+	  xLabel: 'Overs',
+	  yLabel: 'Runs',
+	  labelFont: '19pt Arial', 
+      dataPointFont: '10pt Arial',
        data: [
       {
         type: "line",
@@ -23,13 +27,15 @@
       }
       ]
     });
-
+    chart.options.axisX = { suffix: " Overs" };
+	chart.options.axisY = { suffix: " Runs" };
     chart.render();
+	
   }
   </script>
  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
 <body>
-  <div id="chartContainer" style="height: 300px; width: 100%;">
+  <div align="center" id="chartContainer" style="height: 300px; width: 650px;" >
   </div>
 </body>
 </html>
